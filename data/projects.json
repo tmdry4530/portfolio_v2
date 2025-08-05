@@ -2,7 +2,7 @@
   {
     "title": "Blockchain Project : URUK",
     "description": "URUK은 밈코인을 활용한 로또추첨게임입니다. 사용자들은 Kuru에 런칭된 $URUK을 구매하여 로또에 참여할 수 있습니다. 또한 추첨 결과는 블록체인에 기록되어 누구나 확인할 수 있습니다.",
-    "image": "/URUK.gif",
+    "image": "/urukkuru.gif",
     "tech": ["Next.js", "Solidity", "Hardhat", "Ethers.js"],
     "github": "https://github.com/tmdry4530/urukkuru",
     "live": "https://urukkuru.vercel.app/"
