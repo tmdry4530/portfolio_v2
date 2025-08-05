@@ -1,0 +1,42 @@
+[
+  {
+    "name": "React",
+    "icon": "⚛️",
+    "description": "React 생태계에 대한 고급 숙련도"
+  },
+  {
+    "name": "TypeScript",
+    "icon": "📘",
+    "description": "확장 가능한 애플리케이션을 위한 강력한 타입 시스템"
+  },
+  {
+    "name": "Next.js",
+    "icon": "▲",
+    "description": "풀스택 React 프레임워크 전문성"
+  },
+  {
+    "name": "Node.js",
+    "icon": "🟢",
+    "description": "백엔드 개발 및 API 구축"
+  },
+  {
+    "name": "Solidity",
+    "icon": "🔗",
+    "description": "블록체인 스마트 컨트랙트 개발"
+  },
+  {
+    "name": "Express.js",
+    "icon": "🚀",
+    "description": "Node.js 웹 애플리케이션 프레임워크"
+  },
+  {
+    "name": "MySQL",
+    "icon": "🐬",
+    "description": "관계형 데이터베이스 관리"
+  },
+  {
+    "name": "Git",
+    "icon": "📝",
+    "description": "버전 관리 및 협업 도구"
+  }
+]

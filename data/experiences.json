@@ -1,0 +1,42 @@
+[
+  {
+    "period": "2024.03 ~ Present",
+    "position": "AI 전공 학생",
+    "company": "한국방송통신대학교",
+    "responsibilities": [
+      "AI 및 데이터 분석 관련 학습",
+      "R, Python, Java, C 언어 학습",
+      "머신러닝 및 데이터 엔지니어링 공부",
+      "AI 기술의 실무 적용 방법 탐구"
+    ]
+  },
+  {
+    "period": "2023.06 ~ 2024.03",
+    "position": "블록체인 핀테크 및 응용 SW개발자 양성과정",
+    "company": "경일게임아카데미",
+    "responsibilities": [
+      "HTML, CSS, JavaScript 기초 웹 프로그래밍 학습",
+      "React, TypeScript를 활용한 프론트엔드 개발",
+      "Node.js, Express.js를 통한 백엔드 개발",
+      "Solidity, Truffle, ethers.js를 활용한 블록체인 개발",
+      "Git을 통한 협업 능력 향상"
+    ]
+  },
+  {
+    "period": "2024.03.29 ~ 2024.03.31",
+    "position": "ETH Seoul 해커톤 참가",
+    "company": "블록체인 해커톤",
+    "responsibilities": [
+      "DID를 이용한 기프티콘 마켓플레이스 프로젝트 개발",
+      "Next.js, Scaffold-eth-2 기술 스택 활용",
+      "3일간의 집중적인 블록체인 프로젝트 개발",
+      "팀 협업을 통한 프로젝트 완성"
+    ]
+  },
+  {
+    "period": "2025.07.01 ~ 2025.08.25",
+    "position": "LG Aimers",
+    "company": "인공지능 개발 교육 수료 및 해커톤 참가",
+    "responsibilities": ["AI 개발 교육 수료", "AI 개발 해커톤 참가"]
+  }
+]
