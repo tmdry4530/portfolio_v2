@@ -9,6 +9,16 @@ export interface TechStack {
   name: string;
   icon: string;
   description: string;
+  fallbackIcon?: string;
+  dynamicColor?: boolean;
+  useCustomIcon?: boolean;
+  customIcon?: string;
+  width?: number;
+  height?: number;
+}
+
+export interface TechStackCategory {
+  [key: string]: TechStack[];
 }
 
 export interface Project {
@@ -41,7 +51,7 @@ export interface ContactInfo {
 }
 
 // 데이터 export
-export const techStack: TechStack[] = techStackData;
+export const techStack: TechStackCategory = techStackData;
 export const projects: Project[] = projectsData;
 export const experience: Experience[] = experiencesData;
 export const socialLinks: SocialLink[] = socialLinksData;

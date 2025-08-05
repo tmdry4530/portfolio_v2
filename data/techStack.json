@@ -1,42 +1,141 @@
-[
-  {
-    "name": "React",
-    "icon": "⚛️",
-    "description": "React 생태계에 대한 고급 숙련도"
-  },
-  {
-    "name": "TypeScript",
-    "icon": "📘",
-    "description": "확장 가능한 애플리케이션을 위한 강력한 타입 시스템"
-  },
-  {
-    "name": "Next.js",
-    "icon": "▲",
-    "description": "풀스택 React 프레임워크 전문성"
-  },
-  {
-    "name": "Node.js",
-    "icon": "🟢",
-    "description": "백엔드 개발 및 API 구축"
-  },
-  {
-    "name": "Solidity",
-    "icon": "🔗",
-    "description": "블록체인 스마트 컨트랙트 개발"
-  },
-  {
-    "name": "Express.js",
-    "icon": "🚀",
-    "description": "Node.js 웹 애플리케이션 프레임워크"
-  },
-  {
-    "name": "MySQL",
-    "icon": "🐬",
-    "description": "관계형 데이터베이스 관리"
-  },
-  {
-    "name": "Git",
-    "icon": "📝",
-    "description": "버전 관리 및 협업 도구"
-  }
-]
+{
+  "frontend": [
+    {
+      "name": "HTML 5",
+      "icon": "devicon-html5-plain colored",
+      "fallbackIcon": "🌐",
+      "description": "웹 마크업 언어"
+    },
+    {
+      "name": "CSS",
+      "icon": "devicon-css3-plain colored",
+      "fallbackIcon": "🎨",
+      "description": "스타일링 언어"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "devicon-javascript-plain colored",
+      "fallbackIcon": "📜",
+      "description": "동적 프로그래밍 언어"
+    },
+    {
+      "name": "React",
+      "icon": "devicon-react-original colored",
+      "fallbackIcon": "⚛️",
+      "description": "UI 라이브러리"
+    },
+    {
+      "name": "TypeScript",
+      "icon": "devicon-typescript-plain colored",
+      "fallbackIcon": "📘",
+      "description": "타입 안전 JavaScript"
+    },
+    {
+      "name": "Next.js",
+      "icon": "devicon-nextjs-plain",
+      "fallbackIcon": "▲",
+      "dynamicColor": true,
+      "description": "React 프레임워크"
+    },
+    {
+      "name": "Webpack",
+      "icon": "devicon-webpack-plain colored",
+      "fallbackIcon": "📦",
+      "description": "모듈 번들러"
+    },
+    {
+      "name": "Babel",
+      "icon": "devicon-babel-plain colored",
+      "fallbackIcon": "🔄",
+      "description": "JavaScript 컴파일러"
+    },
+    {
+      "name": "Styled Components",
+      "icon": "devicon-styledcomponents-plain",
+      "fallbackIcon": "💅",
+      "description": "CSS-in-JS"
+    }
+  ],
+  "backend": [
+    {
+      "name": "Node.js",
+      "icon": "devicon-nodejs-plain colored",
+      "fallbackIcon": "🟢",
+      "description": "서버 런타임"
+    },
+    {
+      "name": "Express.js",
+      "icon": "devicon-express-original colored",
+      "fallbackIcon": "🚀",
+      "description": "웹 프레임워크"
+    },
+    {
+      "name": "MySQL",
+      "icon": "devicon-mysql-plain colored",
+      "fallbackIcon": "🐬",
+      "description": "관계형 DB"
+    },
+    {
+      "name": "AWS EC2",
+      "icon": "devicon-amazonwebservices-plain-wordmark colored",
+      "fallbackIcon": "☁️",
+      "description": "클라우드 서비스"
+    }
+  ],
+  "blockchain": [
+    {
+      "name": "Solidity",
+      "icon": "devicon-solidity-plain colored",
+      "fallbackIcon": "🔗",
+      "description": "스마트 컨트랙트"
+    },
+    {
+      "name": "Web3.js",
+      "icon": "devicon-web3js-plain",
+      "fallbackIcon": "⚡",
+      "description": "이더리움 라이브러리"
+    },
+    {
+      "name": "Hardhat",
+      "icon": "devicon-hardhat-plain colored",
+      "fallbackIcon": "🌐",
+      "description": "개발 환경"
+    }
+  ],
+  "tools": [
+    {
+      "name": "Git",
+      "icon": "devicon-git-plain colored",
+      "fallbackIcon": "📝",
+      "description": "버전 관리"
+    },
+    {
+      "name": "GitHub",
+      "icon": "devicon-github-original",
+      "fallbackIcon": "🐙",
+      "description": "코드 저장소"
+    },
+    {
+      "name": "Notion",
+      "icon": "devicon-notion-plain",
+      "fallbackIcon": "💻",
+      "description": "문서 관리"
+    },
+    {
+      "name": "Vercel",
+      "icon": "devicon-vercel-plain",
+      "fallbackIcon": "🚀",
+      "description": "배포 플랫폼"
+    },
+    {
+      "name": "Cursor",
+      "icon": "/cursor.svg",
+      "useCustomIcon": true,
+      "customIcon": "/cursor.svg",
+      "width": 40,
+      "height": 40,
+      "fallbackIcon": "💻",
+      "description": "코드 에디터"
+    }
+  ]
+}
