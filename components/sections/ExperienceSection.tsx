@@ -11,7 +11,7 @@ export default function ExperienceSection({
     <section id="experience" className="py-20 relative z-10">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold mb-16 tracking-wide">
-          <span className="text-accent">04.</span> 경력 및 교육
+          <span className="text-accent">04.</span> 경험 및 교육
         </h2>
         <div className="relative">
           <div className="absolute left-4 top-0 bottom-0 w-px bg-accent/30" />

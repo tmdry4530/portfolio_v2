@@ -37,12 +37,5 @@
     "tech": ["Express.js", "Sequelize", "MySQL", "CRUD"],
     "github": "https://github.com/KGA-Town-Bus/Project_DevUp",
     "live": "#"
-  },
-  {
-    "title": "Express Project : DB_WS",
-    "description": "DB_WS는 자전거 정보를 공유하는 커뮤니티입니다. 사용자들은 DB_WS를 통해 자전거 정보를 공유하고, 다른 사용자들과 소통할 수 있습니다. 로그인 한 사용자들은 게시물을 작성할 수 있으며, 게시물목록에서 페이지네이션을 구현하였습니다. 또한 관리자와 사용자의 권한을 나누어 여러 기능을 제한 할 수 있습니다.",
-    "image": "/DB_WS.gif",
-    "tech": ["Express.js", "MySQL", "Authentication", "Pagination"],
-    "github": "https://github.com/tmdry4530/DB_WS"
   }
 ]
