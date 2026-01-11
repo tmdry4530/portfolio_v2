@@ -1,6 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { Menu, X } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet";
 
 const navItems = [
   { id: "intro", label: "01. Intro" },
@@ -12,34 +19,45 @@ const navItems = [
 export default function Navigation() {
   const [activeSection, setActiveSection] = useState("intro");
   const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
+  // Throttled scroll handler for better performance
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 50);
 
-      // Update active section based on scroll position
-      const sections = navItems.map((item) => document.getElementById(item.id));
-      const scrollPosition = window.scrollY + 100;
+          // Update active section based on scroll position
+          const sections = navItems.map((item) => document.getElementById(item.id));
+          const scrollPosition = window.scrollY + 100;
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(navItems[i].id);
-          break;
-        }
+          for (let i = sections.length - 1; i >= 0; i--) {
+            const section = sections[i];
+            if (section && section.offsetTop <= scrollPosition) {
+              setActiveSection(navItems[i].id);
+              break;
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-  };
+    setIsOpen(false);
+  }, []);
 
   return (
     <nav
@@ -52,12 +70,15 @@ export default function Navigation() {
           {"<Chamdom />"}
         </div>
 
+        {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`font-mono text-sm transition-colors duration-300 hover:text-accent ${
+              aria-label={`Navigate to ${item.label} section`}
+              aria-current={activeSection === item.id ? "true" : undefined}
+              className={`font-mono text-sm transition-colors duration-300 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm px-2 py-1 ${
                 activeSection === item.id
                   ? "text-accent"
                   : "text-secondary-foreground"
@@ -67,6 +88,38 @@ export default function Navigation() {
             </button>
           ))}
         </div>
+
+        {/* Mobile Navigation */}
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+          <SheetTrigger asChild>
+            <button
+              className="md:hidden p-2 text-secondary-foreground hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
+              aria-label="Open navigation menu"
+            >
+              <Menu size={24} />
+            </button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-[280px] bg-background/95 backdrop-blur-md border-l border-accent/20">
+            <div className="flex flex-col gap-6 mt-12">
+              {navItems.map((item) => (
+                <SheetClose asChild key={item.id}>
+                  <button
+                    onClick={() => scrollToSection(item.id)}
+                    aria-label={`Navigate to ${item.label} section`}
+                    aria-current={activeSection === item.id ? "true" : undefined}
+                    className={`font-mono text-lg text-left transition-colors duration-300 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm px-2 py-2 ${
+                      activeSection === item.id
+                        ? "text-accent"
+                        : "text-secondary-foreground"
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                </SheetClose>
+              ))}
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
     </nav>
   );

@@ -1,11 +1,14 @@
 [
   {
-    "title":"Blockchain Project : Proof of Prompt",
-    "description":"Proof of Prompt(PoP)는 탈중앙화 프롬프트 공유 및 LLM 블라인드 평가 플랫폼입니다. x402 프로토콜을 사용하여 프롬프트당 마이크로페이먼트를 구현하고, Base 블록체인과 스마트 컨트랙트를 활용한 PaymentTreasury가 결제 및 보상 분배를 담당합니다. 그리고 Privy를 이용하여 지갑 기반 인증을 처리하고, Flock API를 통해 다양한 LLM 모델의 블라인드 평가를 제공합니다.",
-    "image":"/PoP.png",
-    "tech":["Next.js","Solidity","Foundry","Ethers.js","Privy","Flock API"],
-    "github":"https://github.com/Base-PoP/Proof-of-Prompt",
-    "live":"https://base-pop.vercel.app/"
+    "title": "Blockchain Project : Proof of Prompt",
+    "description": "Proof of Prompt(PoP)는 탈중앙화 프롬프트 공유 및 LLM 블라인드 평가 플랫폼입니다. x402 프로토콜을 사용하여 프롬프트당 마이크로페이먼트를 구현하고, Base 블록체인과 스마트 컨트랙트를 활용한 PaymentTreasury가 결제 및 보상 분배를 담당합니다. 그리고 Privy를 이용하여 지갑 기반 인증을 처리하고, Flock API를 통해 다양한 LLM 모델의 블라인드 평가를 제공합니다.",
+    "image": "/PoP.png",
+    "tech": ["Next.js", "Solidity", "Foundry", "Ethers.js", "Privy", "Flock API"],
+    "github": "https://github.com/Base-PoP/Proof-of-Prompt",
+    "live": "https://base-pop.vercel.app/",
+    "year": 2024,
+    "role": "Full Stack Developer",
+    "featured": true
   },
   {
     "title": "Blockchain Project : URUK",
@@ -13,14 +16,20 @@
     "image": "/urukkuru.gif",
     "tech": ["Next.js", "Solidity", "Hardhat", "Ethers.js"],
     "github": "https://github.com/tmdry4530/urukkuru",
-    "live": "https://urukkuru.vercel.app/"
+    "live": "https://urukkuru.vercel.app/",
+    "year": 2024,
+    "role": "Frontend Developer",
+    "featured": true
   },
   {
     "title": "Blockchain Project : Nae-gift",
     "description": "Naegift는 탈중앙화 기프티콘 마켓플레이스입니다. MetaMask를 사용하여 트랜잭션을 발생시키고, 이더리움 블록체인과 스마트 컨트랙트를 활용한 에스크로 서비스가 거래 중개 역할을 담당합니다. 그리고 Push protocol을 이용하여 탈중앙 알림프로토콜을 사용하였고, DID / VC를 활용하여 사용자의 신원을 관리하였습니다.",
     "image": "/Naegift.gif",
     "tech": ["React", "Solidity", "Hardhat", "Ethers.js", "DID/VC"],
-    "github": "https://github.com/naegift/did_project"
+    "github": "https://github.com/naegift/did_project",
+    "year": 2024,
+    "role": "Full Stack Developer",
+    "featured": true
   },
   {
     "title": "React Project : Pepedooly",
@@ -28,7 +37,9 @@
     "image": "/Pepedooly.gif",
     "tech": ["React", "Express.js", "Sequelize", "Recoil"],
     "github": "https://github.com/Team-PD/PEPEDOOLY",
-    "live": "#"
+    "year": 2023,
+    "role": "Frontend Developer",
+    "featured": false
   },
   {
     "title": "Sequelize Project : Devup",
@@ -36,6 +47,8 @@
     "image": "/Devup.gif",
     "tech": ["Express.js", "Sequelize", "MySQL", "CRUD"],
     "github": "https://github.com/KGA-Town-Bus/Project_DevUp",
-    "live": "#"
+    "year": 2023,
+    "role": "Backend Developer",
+    "featured": false
   }
 ]

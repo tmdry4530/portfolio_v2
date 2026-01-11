@@ -33,9 +33,10 @@ export default function FooterSection({
         </p>
         <a
           href={`mailto:${contactInfo.email}`}
-          className="inline-flex items-center gap-2 bg-accent text-background px-8 py-4 hover:bg-accent/90 transition-colors font-mono mb-12"
+          className="inline-flex items-center gap-2 bg-accent text-background px-8 py-4 hover:bg-accent/90 transition-colors font-mono mb-12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          aria-label={`${contactInfo.email}로 이메일 보내기`}
         >
-          <Mail size={20} />
+          <Mail size={20} aria-hidden="true" />
           안녕하세요
         </a>
         <div className="flex justify-center gap-6 mb-8">
@@ -45,8 +46,8 @@ export default function FooterSection({
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-secondary-foreground hover:text-accent transition-colors"
-              title={`${link.name} 프로필 보기`}
+              className="text-secondary-foreground hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm p-1"
+              aria-label={`${link.name} 프로필 보기`}
             >
               {getIconComponent(link.icon)}
             </a>

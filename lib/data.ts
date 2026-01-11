@@ -27,7 +27,10 @@ export interface Project {
   image: string;
   tech: string[];
   github: string;
-  live: string;
+  live?: string;
+  year?: number;
+  role?: string;
+  featured?: boolean;
 }
 
 export interface Experience {

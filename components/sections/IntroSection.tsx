@@ -9,8 +9,33 @@ interface IntroSectionProps {
 
 export default function IntroSection({ contactInfo }: IntroSectionProps) {
   const [typewriterText, setTypewriterText] = useState("");
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
+  // Check for reduced motion preference
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(mediaQuery.matches);
+
+    if (mediaQuery.matches) {
+      // Show full text immediately if reduced motion is preferred
+      setTypewriterText(contactInfo.title);
+    }
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setPrefersReducedMotion(e.matches);
+      if (e.matches) {
+        setTypewriterText(contactInfo.title);
+      }
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, [contactInfo.title]);
+
+  // Typewriter effect
+  useEffect(() => {
+    if (prefersReducedMotion) return;
+
     let i = 0;
     const timer = setInterval(() => {
       if (i < contactInfo.title.length) {
@@ -22,7 +47,7 @@ export default function IntroSection({ contactInfo }: IntroSectionProps) {
     }, 100);
 
     return () => clearInterval(timer);
-  }, [contactInfo.title]);
+  }, [contactInfo.title, prefersReducedMotion]);
 
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
@@ -38,8 +63,8 @@ export default function IntroSection({ contactInfo }: IntroSectionProps) {
         <h1 className="text-5xl md:text-7xl font-bold mb-4 tracking-wide">
           {contactInfo.name}
         </h1>
-        <div className="text-2xl md:text-4xl text-secondary-foreground mb-8 h-12">
-          <span className="border-r-2 border-accent animate-pulse">
+        <div className="text-2xl md:text-4xl text-secondary-foreground mb-8 min-h-[3rem]">
+          <span className={`border-r-2 border-accent ${prefersReducedMotion ? "" : "animate-pulse"}`}>
             {typewriterText}
           </span>
         </div>
@@ -48,7 +73,8 @@ export default function IntroSection({ contactInfo }: IntroSectionProps) {
         </p>
         <button
           onClick={scrollToProjects}
-          className="border-2 border-accent text-accent px-8 py-4 hover:bg-accent hover:text-background transition-all duration-300 font-mono"
+          aria-label="프로젝트 섹션으로 이동"
+          className="border-2 border-accent text-accent px-8 py-4 hover:bg-accent hover:text-background transition-all duration-300 font-mono focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           프로젝트 보기
         </button>

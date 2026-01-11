@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Project } from "@/lib/data";
 import { Github, ExternalLink } from "lucide-react";
 
@@ -22,10 +23,15 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
             >
               <div className="lg:w-1/2">
                 <div className="group relative overflow-hidden">
-                  <img
+                  <Image
                     src={project.image || "/placeholder.svg"}
-                    alt={project.title}
+                    alt={`${project.title} 프로젝트 스크린샷 - ${project.description.slice(0, 50)}...`}
+                    width={640}
+                    height={360}
                     className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading={index < 2 ? "eager" : "lazy"}
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAYH/8QAHxAAAQQCAgMAAAAAAAAAAAAAAQACAwQFERIhBjFB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAZEQACAwEAAAAAAAAAAAAAAAABAgADESH/2gAMAwEAAhEDEEAAAAGpYIKqxif/2Q=="
                   />
                   <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
@@ -52,8 +58,8 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-secondary-foreground hover:text-accent transition-colors"
-                    title="GitHub 저장소 보기"
+                    className="text-secondary-foreground hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm p-1"
+                    aria-label={`${project.title} GitHub 저장소 보기`}
                   >
                     <Github size={24} />
                   </a>
@@ -62,8 +68,8 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-secondary-foreground hover:text-accent transition-colors"
-                      title="라이브 데모 보기"
+                      className="text-secondary-foreground hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm p-1"
+                      aria-label={`${project.title} 라이브 데모 보기`}
                     >
                       <ExternalLink size={24} />
                     </a>
