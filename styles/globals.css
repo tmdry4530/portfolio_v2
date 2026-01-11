@@ -7,6 +7,21 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Gradient text utility */
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent via-white to-accent bg-clip-text text-transparent;
+    background-size: 200% auto;
+  }
+
+  /* Glassmorphism utility */
+  .glass {
+    @apply bg-secondary/60 backdrop-blur-xl border border-white/10;
+  }
+
+  .glass-strong {
+    @apply bg-background/60 backdrop-blur-2xl border border-white/5;
+  }
 }
 
 @layer base {
@@ -85,7 +100,29 @@
   * {
     @apply border-border;
   }
+
+  html {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Better focus styles */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
+  }
+
+  /* Selection color */
+  ::selection {
+    @apply bg-accent/30 text-foreground;
   }
 }

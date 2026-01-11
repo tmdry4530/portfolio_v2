@@ -32,26 +32,31 @@ export default function AnimatedBackground() {
     canvas.width = window.innerWidth
     canvas.height = window.innerHeight
 
-    // Reduce particle count on mobile for better performance
+    // Adaptive particle count based on screen size and device capability
     const isMobile = window.innerWidth < 768
-    const particleCount = isMobile ? 25 : 50
+    const isLowPower = navigator.hardwareConcurrency ? navigator.hardwareConcurrency <= 4 : false
+    const particleCount = isMobile || isLowPower ? 20 : 40
 
-    const particles: Array<{
+    interface Particle {
       x: number
       y: number
       vx: number
       vy: number
       size: number
-    }> = []
+      opacity: number
+    }
 
-    // Create particles
+    const particles: Particle[] = []
+
+    // Create particles with varied properties
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        size: Math.random() * 2 + 1,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        size: Math.random() * 2 + 0.5,
+        opacity: Math.random() * 0.15 + 0.05,
       })
     }
 
@@ -72,6 +77,24 @@ export default function AnimatedBackground() {
 
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
+      // Draw connections between nearby particles
+      particles.forEach((p1, i) => {
+        particles.slice(i + 1).forEach((p2) => {
+          const dx = p1.x - p2.x
+          const dy = p1.y - p2.y
+          const distance = Math.sqrt(dx * dx + dy * dy)
+
+          if (distance < 150) {
+            ctx.beginPath()
+            ctx.moveTo(p1.x, p1.y)
+            ctx.lineTo(p2.x, p2.y)
+            ctx.strokeStyle = `rgba(0, 255, 153, ${0.03 * (1 - distance / 150)})`
+            ctx.stroke()
+          }
+        })
+      })
+
+      // Draw and update particles
       particles.forEach((particle) => {
         particle.x += particle.vx
         particle.y += particle.vy
@@ -81,8 +104,7 @@ export default function AnimatedBackground() {
 
         ctx.beginPath()
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2)
-        // Use CSS custom property compatible color
-        ctx.fillStyle = "rgba(0, 255, 153, 0.1)"
+        ctx.fillStyle = `rgba(0, 255, 153, ${particle.opacity})`
         ctx.fill()
       })
 

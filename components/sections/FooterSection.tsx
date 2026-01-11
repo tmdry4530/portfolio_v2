@@ -26,19 +26,25 @@ export default function FooterSection({
   return (
     <footer className="py-20 text-center relative z-10">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-4">다음은 무엇일까요?</h2>
+        <h2 className="text-fluid-3xl font-bold mb-4">다음은 무엇일까요?</h2>
         <p className="text-secondary-foreground mb-8 max-w-md mx-auto">
           현재 새로운 기회를 찾고 있습니다. 함께 일하고 싶으시다면 언제든
           연락주세요.
         </p>
+
+        {/* CTA Button with glow effect */}
         <a
           href={`mailto:${contactInfo.email}`}
-          className="inline-flex items-center gap-2 bg-accent text-background px-8 py-4 hover:bg-accent/90 transition-colors font-mono mb-12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="group relative inline-flex items-center gap-2 bg-accent text-background px-8 py-4 font-mono mb-12 overflow-hidden transition-all duration-300 hover:shadow-glow-lg hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           aria-label={`${contactInfo.email}로 이메일 보내기`}
         >
-          <Mail size={20} aria-hidden="true" />
-          안녕하세요
+          {/* Shine effect */}
+          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+          <Mail size={20} aria-hidden="true" className="relative z-10" />
+          <span className="relative z-10">안녕하세요</span>
         </a>
+
+        {/* Social links with hover effects */}
         <div className="flex justify-center gap-6 mb-8">
           {socialLinks.map((link) => (
             <a
@@ -46,15 +52,19 @@ export default function FooterSection({
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-secondary-foreground hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm p-1"
+              className="text-secondary-foreground hover:text-accent hover:scale-125 hover:drop-shadow-glow transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-full p-2"
               aria-label={`${link.name} 프로필 보기`}
             >
               {getIconComponent(link.icon)}
             </a>
           ))}
         </div>
+
         <p className="text-secondary-foreground text-sm">
-          Designed & Built by {contactInfo.name}
+          Designed & Built by{" "}
+          <span className="text-accent hover:drop-shadow-glow transition-all duration-300">
+            {contactInfo.name}
+          </span>
         </p>
       </div>
     </footer>

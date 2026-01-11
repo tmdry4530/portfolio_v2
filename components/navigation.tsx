@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -61,12 +61,14 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-md" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "bg-background/70 backdrop-blur-2xl border-b border-white/5 shadow-lg shadow-black/10"
+          : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <div className="text-accent font-bold text-xl font-mono">
+        <div className="text-accent font-bold text-xl font-mono drop-shadow-glow">
           {"<Chamdom />"}
         </div>
 
@@ -78,13 +80,19 @@ export default function Navigation() {
               onClick={() => scrollToSection(item.id)}
               aria-label={`Navigate to ${item.label} section`}
               aria-current={activeSection === item.id ? "true" : undefined}
-              className={`font-mono text-sm transition-colors duration-300 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm px-2 py-1 ${
+              className={`relative font-mono text-sm transition-all duration-300 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm px-2 py-1 ${
                 activeSection === item.id
                   ? "text-accent"
                   : "text-secondary-foreground"
               }`}
             >
               {item.label}
+              {/* Active indicator underline */}
+              <span
+                className={`absolute bottom-0 left-0 h-0.5 bg-accent transition-all duration-300 ${
+                  activeSection === item.id ? "w-full" : "w-0"
+                }`}
+              />
             </button>
           ))}
         </div>
@@ -99,7 +107,7 @@ export default function Navigation() {
               <Menu size={24} />
             </button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[280px] bg-background/95 backdrop-blur-md border-l border-accent/20">
+          <SheetContent side="right" className="w-[280px] bg-background/95 backdrop-blur-2xl border-l border-accent/20">
             <div className="flex flex-col gap-6 mt-12">
               {navItems.map((item) => (
                 <SheetClose asChild key={item.id}>
@@ -107,7 +115,7 @@ export default function Navigation() {
                     onClick={() => scrollToSection(item.id)}
                     aria-label={`Navigate to ${item.label} section`}
                     aria-current={activeSection === item.id ? "true" : undefined}
-                    className={`font-mono text-lg text-left transition-colors duration-300 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm px-2 py-2 ${
+                    className={`relative font-mono text-lg text-left transition-all duration-300 hover:text-accent hover:translate-x-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm px-2 py-2 ${
                       activeSection === item.id
                         ? "text-accent"
                         : "text-secondary-foreground"

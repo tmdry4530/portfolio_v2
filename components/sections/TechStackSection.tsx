@@ -31,35 +31,44 @@ const TechCard = ({ tech }: { tech: any }) => {
 
   return (
     <div
-      className="group bg-secondary p-6 border border-secondary hover:border-accent focus-within:border-accent transition-all duration-300 hover:shadow-lg hover:shadow-accent/20 focus-within:shadow-lg focus-within:shadow-accent/20 relative"
+      className="group bg-secondary/60 backdrop-blur-xl p-6 border border-white/10 rounded-lg hover:border-accent/50 focus-within:border-accent/50 transition-all duration-300 hover:shadow-glow hover:-translate-y-2 hover:scale-[1.02] focus-within:shadow-glow focus-within:-translate-y-2 relative overflow-hidden"
       tabIndex={0}
       role="article"
       aria-label={`${tech.name}: ${tech.description}`}
     >
-      <div className="text-4xl mb-4 text-center flex items-center justify-center h-[48px]">
-        {tech.useCustomIcon ? (
-          <Image
-            src={tech.customIcon}
-            alt={tech.name}
-            width={tech.width || 40}
-            height={tech.height || 40}
-            className={mounted && !darkMode ? "brightness-[0.8]" : "brightness-100"}
-          />
-        ) : (
-          <i
-            className={`${iconClass} text-4xl`}
-            style={{ fontSize: "2rem" }}
-            aria-hidden="true"
-          ></i>
-        )}
+      {/* Glow effect background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+      <div className="relative z-10">
+        <div className="text-4xl mb-4 text-center flex items-center justify-center h-[48px]">
+          {tech.useCustomIcon ? (
+            <Image
+              src={tech.customIcon}
+              alt={tech.name}
+              width={tech.width || 40}
+              height={tech.height || 40}
+              className={`transition-all duration-300 group-hover:scale-110 ${mounted && !darkMode ? "brightness-[0.8]" : "brightness-100"}`}
+            />
+          ) : (
+            <i
+              className={`${iconClass} text-4xl transition-all duration-300 group-hover:scale-110`}
+              style={{ fontSize: "2rem" }}
+              aria-hidden="true"
+            ></i>
+          )}
+        </div>
+        <h3 className="text-center font-semibold mb-2 group-hover:text-accent transition-colors duration-300">
+          {tech.name}
+        </h3>
       </div>
-      <h3 className="text-center font-semibold mb-2">{tech.name}</h3>
-      {/* Description - visible on hover AND focus */}
-      <div className="absolute inset-0 bg-background/90 p-4 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+
+      {/* Description - visible on hover AND focus with slide-up animation */}
+      <div className="absolute inset-0 bg-background/95 backdrop-blur-md p-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:translate-y-0 transition-all duration-300 flex items-center justify-center rounded-lg">
         <p className="text-sm text-center text-secondary-foreground">
           {tech.description}
         </p>
       </div>
+
       {/* Mobile: always visible description below card */}
       <p className="text-xs text-center text-secondary-foreground mt-2 md:hidden">
         {tech.description}
@@ -72,7 +81,7 @@ const TechCard = ({ tech }: { tech: any }) => {
 const TechCategory = ({ title, techs }: { title: string; techs: any[] }) => (
   <div className="mb-12">
     <h3 className="text-2xl font-bold mb-6 text-accent">{title}</h3>
-    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
       {techs.map((tech, index) => (
         <TechCard key={index} tech={tech} />
       ))}
@@ -88,7 +97,7 @@ export default function TechStackSection({ techStack }: TechStackSectionProps) {
   return (
     <section id="tech-stack" className="py-20 relative z-10">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold mb-16 tracking-wide">
+        <h2 className="text-fluid-3xl font-bold mb-16 tracking-wide">
           <span className="text-accent">02.</span> 기술 스택
         </h2>
 

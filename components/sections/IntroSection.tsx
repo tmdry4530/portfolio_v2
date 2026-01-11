@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { ChevronDown } from "lucide-react";
 import { ContactInfo } from "@/lib/data";
 
 interface IntroSectionProps {
@@ -53,31 +54,61 @@ export default function IntroSection({ contactInfo }: IntroSectionProps) {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const scrollToNext = () => {
+    document.getElementById("tech-stack")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section
       id="intro"
-      className="min-h-screen flex items-center justify-center relative z-10"
+      className="min-h-screen flex flex-col items-center justify-center relative z-10"
     >
       <div className="container mx-auto px-6 text-center">
-        <p className="text-accent mb-4 text-lg">안녕하세요, 저는</p>
-        <h1 className="text-5xl md:text-7xl font-bold mb-4 tracking-wide">
-          {contactInfo.name}
+        <p className="text-accent mb-4 text-lg animate-fade-in">안녕하세요, 저는</p>
+
+        {/* Gradient text name */}
+        <h1 className="text-fluid-5xl font-bold mb-4 tracking-wide animate-slide-up">
+          <span className="bg-gradient-to-r from-accent via-white to-accent bg-clip-text text-transparent bg-[length:200%_auto] hover:animate-pulse">
+            {contactInfo.name}
+          </span>
         </h1>
-        <div className="text-2xl md:text-4xl text-secondary-foreground mb-8 min-h-[3rem]">
+
+        <div className="text-fluid-2xl text-secondary-foreground mb-8 min-h-[3rem] animate-fade-in">
           <span className={`border-r-2 border-accent ${prefersReducedMotion ? "" : "animate-pulse"}`}>
             {typewriterText}
           </span>
         </div>
-        <p className="text-lg text-secondary-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
+
+        <p className="text-fluid-base text-secondary-foreground mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in">
           {contactInfo.description}
         </p>
+
         <button
           onClick={scrollToProjects}
           aria-label="프로젝트 섹션으로 이동"
-          className="border-2 border-accent text-accent px-8 py-4 hover:bg-accent hover:text-background transition-all duration-300 font-mono focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="group relative border-2 border-accent text-accent px-8 py-4 font-mono overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-glow active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
-          프로젝트 보기
+          {/* Hover background effect */}
+          <span className="absolute inset-0 bg-accent transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+          <span className="relative z-10 group-hover:text-background transition-colors duration-300">
+            프로젝트 보기
+          </span>
         </button>
+      </div>
+
+      {/* Scroll indicator */}
+      <div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer animate-bounce-slow"
+        onClick={scrollToNext}
+        role="button"
+        aria-label="아래로 스크롤"
+        tabIndex={0}
+        onKeyDown={(e) => e.key === 'Enter' && scrollToNext()}
+      >
+        <div className="flex flex-col items-center gap-2 text-secondary-foreground hover:text-accent transition-colors">
+          <span className="text-xs font-mono tracking-wider">SCROLL</span>
+          <ChevronDown size={20} className="animate-bounce" />
+        </div>
       </div>
     </section>
   );
