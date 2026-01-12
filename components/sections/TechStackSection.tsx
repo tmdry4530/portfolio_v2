@@ -62,17 +62,6 @@ const TechCard = ({ tech }: { tech: any }) => {
         </h3>
       </div>
 
-      {/* Description - visible on hover AND focus with slide-up animation */}
-      <div className="absolute inset-0 bg-background/95 backdrop-blur-md p-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:translate-y-0 transition-all duration-300 flex items-center justify-center rounded-lg">
-        <p className="text-sm text-center text-secondary-foreground">
-          {tech.description}
-        </p>
-      </div>
-
-      {/* Mobile: always visible description below card */}
-      <p className="text-xs text-center text-secondary-foreground mt-2 md:hidden">
-        {tech.description}
-      </p>
     </div>
   );
 };
