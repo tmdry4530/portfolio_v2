@@ -1,17 +1,18 @@
 [
   {
-  "title": "Job Application Tracker",
-  "description": "채용 플랫폼(원티드, 사람인, 잡코리아) 북마크/스크랩 공고를 자동 수집하고 통합 관리하는 서비스입니다. Chrome Extension이 각 플랫폼의 스크랩 페이지에서 공고 정보와 JD를 자동 파싱하고, Claude AI를 활용하여 JD 핵심 요약 및 맞춤형 면접 예상질문과 모범답변을 생성합니다. Supabase를 활용한 인증 및 데이터 관리, Next.js App Router 기반의 대시보드로 마감일 추적과 지원 현황을 한눈에 관리할 수 있습니다.",
-  "image": "/job-tracker.png",
-  "tech": ["Next.js 14", "TypeScript", "Plasmo", "Chrome Extension", "Supabase", "Claude AI", "Tailwind CSS", "shadcn/ui"],
-  "github": "https://github.com/tmdry4530/Job-tracker",
-  "live": "https://chromewebstore.google.com/detail/job-application-tracker/mcplgkcchgkjfhedkifomejdedggbobl",
-  "year": 2025,
-  "role": "Full Stack Developer",
-  "featured": true
+    "title": "Job Application Tracker",
+    "description": "채용 플랫폼(원티드, 사람인, 잡코리아) 북마크/스크랩 공고를 자동 수집하고 통합 관리하는 서비스입니다. Chrome Extension이 각 플랫폼의 스크랩 페이지에서 공고 정보와 JD를 자동 파싱하고, Claude AI를 활용하여 JD 핵심 요약 및 맞춤형 면접 예상질문과 모범답변을 생성합니다. Supabase를 활용한 인증 및 데이터 관리, Next.js App Router 기반의 대시보드로 마감일 추적과 지원 현황을 한눈에 관리할 수 있습니다.",
+    "image": "/job-tracker.png",
+    "tech": ["Next.js 14", "TypeScript", "Plasmo", "Chrome Extension", "Supabase", "Claude AI", "Tailwind CSS", "shadcn/ui"],
+    "github": "https://github.com/tmdry4530/Job-tracker",
+    "live": "https://chromewebstore.google.com/detail/job-application-tracker/mcplgkcchgkjfhedkifomejdedggbobl",
+    "year": 2025,
+    "role": "Full Stack Developer",
+    "featured": true,
+    "category": "Full Stack Project"
   },
   {
-    "title": "Blockchain Project : Proof of Prompt",
+    "title": "Proof of Prompt",
     "description": "Proof of Prompt(PoP)는 탈중앙화 프롬프트 공유 및 LLM 블라인드 평가 플랫폼입니다. x402 프로토콜을 사용하여 프롬프트당 마이크로페이먼트를 구현하고, Base 블록체인과 스마트 컨트랙트를 활용한 PaymentTreasury가 결제 및 보상 분배를 담당합니다. 그리고 Privy를 이용하여 지갑 기반 인증을 처리하고, Flock API를 통해 다양한 LLM 모델의 블라인드 평가를 제공합니다.",
     "image": "/PoP.png",
     "tech": ["Next.js", "Solidity", "Foundry", "Ethers.js", "Privy", "Flock API"],
@@ -19,10 +20,11 @@
     "live": "https://base-pop.vercel.app/",
     "year": 2025,
     "role": "Full Stack Developer",
-    "featured": true
+    "featured": true,
+    "category": "Blockchain Project"
   },
   {
-    "title": "Blockchain Project : URUK",
+    "title": "URUK",
     "description": "URUK은 밈코인을 활용한 로또추첨게임입니다. 사용자들은 Kuru에 런칭된 $URUK을 구매하여 로또에 참여할 수 있습니다. 또한 추첨 결과는 블록체인에 기록되어 누구나 확인할 수 있습니다.",
     "image": "/urukkuru.gif",
     "tech": ["Next.js", "Solidity", "Hardhat", "Ethers.js"],
@@ -30,36 +32,40 @@
     "live": "https://urukkuru.vercel.app/",
     "year": 2025,
     "role": "Frontend Developer",
-    "featured": true
+    "featured": true,
+    "category": "Blockchain Project"
   },
   {
-    "title": "Blockchain Project : Nae-gift",
+    "title": "Nae-gift",
     "description": "Naegift는 탈중앙화 기프티콘 마켓플레이스입니다. MetaMask를 사용하여 트랜잭션을 발생시키고, 이더리움 블록체인과 스마트 컨트랙트를 활용한 에스크로 서비스가 거래 중개 역할을 담당합니다. 그리고 Push protocol을 이용하여 탈중앙 알림프로토콜을 사용하였고, DID / VC를 활용하여 사용자의 신원을 관리하였습니다.",
     "image": "/Naegift.gif",
     "tech": ["React", "Solidity", "Hardhat", "Ethers.js", "DID/VC"],
     "github": "https://github.com/naegift/did_project",
     "year": 2024,
     "role": "Full Stack Developer",
-    "featured": true
+    "featured": true,
+    "category": "Blockchain Project"
   },
   {
-    "title": "React Project : Pepedooly",
+    "title": "Pepedooly",
     "description": "Pepedooly는 사용자가 밈을 공유하고, 다른 사용자들과 소통할 수 있는 커뮤니티입니다. 컨셉으로는 국내 최대의 밈코인 커뮤니티로서 해외의 9gag, reddit 같은 커뮤니티를 모티브로 하고 있습니다. 사용자권한을 나누어 관리하고, 관리자 및 사용자 정보에서는 props로 메뉴관리를 하였고, 로그인 후 상태유지를 위해 Recoil을 사용하였습니다.",
     "image": "/Pepedooly.gif",
     "tech": ["React", "Express.js", "Sequelize", "Recoil"],
     "github": "https://github.com/Team-PD/PEPEDOOLY",
     "year": 2023,
     "role": "Frontend Developer",
-    "featured": false
+    "featured": false,
+    "category": "React Project"
   },
   {
-    "title": "Sequelize Project : Devup",
+    "title": "Devup",
     "description": "Devup은 개발자들을 위한 커뮤니티입니다. 사용자들은 개발을 비롯한 다양한 내용들을 공유할수 있습니다. 저는 전체적인 CRUD 기능을 구현하였으며 에디터를 삽입하여 사용자들은 코드블럭을 작성할 수 있고, 검색창을 통해 특정게시물을 검색할수있고, 홈화면에서는 무한스크롤이 가능하며, 게시물 내에 이미지여부, 좋아요, 댓글, 조회수를 확인할 수 있습니다.",
     "image": "/Devup.gif",
     "tech": ["Express.js", "Sequelize", "MySQL", "CRUD"],
     "github": "https://github.com/KGA-Town-Bus/Project_DevUp",
     "year": 2023,
     "role": "Backend Developer",
-    "featured": false
+    "featured": false,
+    "category": "Backend Project"
   }
 ]

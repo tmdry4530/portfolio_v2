@@ -51,10 +51,12 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
               {/* Content */}
               <div className="lg:w-2/5 w-full space-y-5">
                 {/* Project type label */}
-                <div className="flex items-center gap-2 text-accent font-mono text-sm">
-                  <Folder size={16} />
-                  <span>Blockchain Project</span>
-                </div>
+                {project.category && (
+                  <div className="flex items-center gap-2 text-accent font-mono text-sm">
+                    <Folder size={16} />
+                    <span>{project.category}</span>
+                  </div>
+                )}
 
                 {/* Title */}
                 <h3 className="text-2xl lg:text-3xl font-bold group-hover:text-accent transition-colors duration-300">

@@ -31,6 +31,7 @@ export interface Project {
   year?: number;
   role?: string;
   featured?: boolean;
+  category?: string;
 }
 
 export interface Experience {

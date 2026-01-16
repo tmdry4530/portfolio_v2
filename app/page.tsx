@@ -2,6 +2,7 @@
 
 import Navigation from "@/components/navigation";
 import AnimatedBackground from "@/components/animated-background";
+import ErrorBoundary from "@/components/error-boundary";
 import {
   IntroSection,
   TechStackSection,
@@ -20,7 +21,9 @@ import {
 export default function Portfolio() {
   return (
     <div className="min-h-screen bg-background text-foreground font-mono">
-      <AnimatedBackground />
+      <ErrorBoundary>
+        <AnimatedBackground />
+      </ErrorBoundary>
       <Navigation />
 
       <IntroSection contactInfo={contactInfo} />

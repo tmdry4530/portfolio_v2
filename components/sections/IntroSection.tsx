@@ -66,9 +66,9 @@ export default function IntroSection({ contactInfo }: IntroSectionProps) {
       <div className="container mx-auto px-6 text-center">
         <p className="text-accent mb-4 text-lg animate-fade-in">안녕하세요, 저는</p>
 
-        {/* Gradient text name */}
+        {/* Name */}
         <h1 className="text-fluid-5xl font-bold mb-4 tracking-wide animate-slide-up">
-          <span className="bg-gradient-to-r from-accent via-white to-accent bg-clip-text text-transparent bg-[length:200%_auto] hover:animate-pulse">
+          <span className="text-accent">
             {contactInfo.name}
           </span>
         </h1>

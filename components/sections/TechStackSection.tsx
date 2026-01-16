@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { TechStackCategory } from "@/lib/data";
+import { TechStackCategory, TechStack } from "@/lib/data";
 import { useTheme } from "next-themes";
 import { useMemo, useState, useEffect } from "react";
 
@@ -10,7 +10,7 @@ interface TechStackSectionProps {
 }
 
 // 개별 스킬 카드 컴포넌트
-const TechCard = ({ tech }: { tech: any }) => {
+const TechCard = ({ tech }: { tech: TechStack }) => {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const darkMode = theme === "dark";
@@ -41,7 +41,7 @@ const TechCard = ({ tech }: { tech: any }) => {
 
       <div className="relative z-10">
         <div className="text-4xl mb-4 text-center flex items-center justify-center h-[48px]">
-          {tech.useCustomIcon ? (
+          {tech.useCustomIcon && tech.customIcon ? (
             <Image
               src={tech.customIcon}
               alt={tech.name}
@@ -67,12 +67,12 @@ const TechCard = ({ tech }: { tech: any }) => {
 };
 
 // 스킬 카테고리 컴포넌트
-const TechCategory = ({ title, techs }: { title: string; techs: any[] }) => (
+const TechCategory = ({ title, techs }: { title: string; techs: TechStack[] }) => (
   <div className="mb-12">
     <h3 className="text-2xl font-bold mb-6 text-accent">{title}</h3>
     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
-      {techs.map((tech, index) => (
-        <TechCard key={index} tech={tech} />
+      {techs.map((tech) => (
+        <TechCard key={tech.name} tech={tech} />
       ))}
     </div>
   </div>
