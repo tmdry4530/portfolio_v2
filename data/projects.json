@@ -1,12 +1,23 @@
 [
   {
+  "title": "Job Application Tracker",
+  "description": "채용 플랫폼(원티드, 사람인, 잡코리아) 북마크/스크랩 공고를 자동 수집하고 통합 관리하는 서비스입니다. Chrome Extension이 각 플랫폼의 스크랩 페이지에서 공고 정보와 JD를 자동 파싱하고, Claude AI를 활용하여 JD 핵심 요약 및 맞춤형 면접 예상질문과 모범답변을 생성합니다. Supabase를 활용한 인증 및 데이터 관리, Next.js App Router 기반의 대시보드로 마감일 추적과 지원 현황을 한눈에 관리할 수 있습니다.",
+  "image": "/job-tracker.png",
+  "tech": ["Next.js 14", "TypeScript", "Plasmo", "Chrome Extension", "Supabase", "Claude AI", "Tailwind CSS", "shadcn/ui"],
+  "github": "https://github.com/tmdry4530/Job-tracker",
+  "live": "https://chromewebstore.google.com/detail/job-application-tracker/mcplgkcchgkjfhedkifomejdedggbobl",
+  "year": 2025,
+  "role": "Full Stack Developer",
+  "featured": true
+  },
+  {
     "title": "Blockchain Project : Proof of Prompt",
     "description": "Proof of Prompt(PoP)는 탈중앙화 프롬프트 공유 및 LLM 블라인드 평가 플랫폼입니다. x402 프로토콜을 사용하여 프롬프트당 마이크로페이먼트를 구현하고, Base 블록체인과 스마트 컨트랙트를 활용한 PaymentTreasury가 결제 및 보상 분배를 담당합니다. 그리고 Privy를 이용하여 지갑 기반 인증을 처리하고, Flock API를 통해 다양한 LLM 모델의 블라인드 평가를 제공합니다.",
     "image": "/PoP.png",
     "tech": ["Next.js", "Solidity", "Foundry", "Ethers.js", "Privy", "Flock API"],
     "github": "https://github.com/Base-PoP/Proof-of-Prompt",
     "live": "https://base-pop.vercel.app/",
-    "year": 2024,
+    "year": 2025,
     "role": "Full Stack Developer",
     "featured": true
   },
@@ -17,7 +28,7 @@
     "tech": ["Next.js", "Solidity", "Hardhat", "Ethers.js"],
     "github": "https://github.com/tmdry4530/urukkuru",
     "live": "https://urukkuru.vercel.app/",
-    "year": 2024,
+    "year": 2025,
     "role": "Frontend Developer",
     "featured": true
   },
