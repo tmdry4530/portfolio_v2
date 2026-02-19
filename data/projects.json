@@ -45,27 +45,5 @@
     "role": "Full Stack Developer",
     "featured": true,
     "category": "Blockchain Project"
-  },
-  {
-    "title": "Pepedooly",
-    "description": "Pepedooly는 사용자가 밈을 공유하고, 다른 사용자들과 소통할 수 있는 커뮤니티입니다. 컨셉으로는 국내 최대의 밈코인 커뮤니티로서 해외의 9gag, reddit 같은 커뮤니티를 모티브로 하고 있습니다. 사용자권한을 나누어 관리하고, 관리자 및 사용자 정보에서는 props로 메뉴관리를 하였고, 로그인 후 상태유지를 위해 Recoil을 사용하였습니다.",
-    "image": "/Pepedooly.gif",
-    "tech": ["React", "Express.js", "Sequelize", "Recoil"],
-    "github": "https://github.com/Team-PD/PEPEDOOLY",
-    "year": 2023,
-    "role": "Frontend Developer",
-    "featured": false,
-    "category": "React Project"
-  },
-  {
-    "title": "Devup",
-    "description": "Devup은 개발자들을 위한 커뮤니티입니다. 사용자들은 개발을 비롯한 다양한 내용들을 공유할수 있습니다. 저는 전체적인 CRUD 기능을 구현하였으며 에디터를 삽입하여 사용자들은 코드블럭을 작성할 수 있고, 검색창을 통해 특정게시물을 검색할수있고, 홈화면에서는 무한스크롤이 가능하며, 게시물 내에 이미지여부, 좋아요, 댓글, 조회수를 확인할 수 있습니다.",
-    "image": "/Devup.gif",
-    "tech": ["Express.js", "Sequelize", "MySQL", "CRUD"],
-    "github": "https://github.com/KGA-Town-Bus/Project_DevUp",
-    "year": 2023,
-    "role": "Backend Developer",
-    "featured": false,
-    "category": "Backend Project"
   }
 ]

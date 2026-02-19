@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc:*)",
+      "Bash(git -C /mnt/d/Develop/personal/Portfolio/Portfolio_V2 log --oneline)"
+    ]
+  }
+}
