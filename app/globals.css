@@ -121,3 +121,33 @@
     @apply bg-accent/30 text-foreground;
   }
 }
+
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .resume-print-root,
+  .resume-print-card {
+    background: white !important;
+  }
+
+  .resume-print-section,
+  .resume-print-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
