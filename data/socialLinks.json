@@ -10,8 +10,13 @@
     "icon": "Linkedin"
   },
   {
-    "name": "Twitter",
+    "name": "Blog",
+    "url": "https://blog.chamdom.dev/",
+    "icon": "Blog"
+  },
+  {
+    "name": "X",
     "url": "https://x.com/_chamdom_",
-    "icon": "Twitter"
+    "icon": "X"
   }
 ]

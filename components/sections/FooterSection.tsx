@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Github, Linkedin, BookText, Twitter } from "lucide-react";
 import { ContactInfo, SocialLink } from "@/lib/data";
 
 interface FooterSectionProps {
@@ -16,7 +16,9 @@ export default function FooterSection({
         return <Github size={24} />;
       case "Linkedin":
         return <Linkedin size={24} />;
-      case "Twitter":
+      case "Blog":
+        return <BookText size={24} />;
+      case "X":
         return <Twitter size={24} />;
       default:
         return null;

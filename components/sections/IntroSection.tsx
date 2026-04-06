@@ -64,7 +64,7 @@ export default function IntroSection({ contactInfo }: IntroSectionProps) {
       className="min-h-screen flex flex-col items-center justify-center relative z-10"
     >
       <div className="container mx-auto px-6 text-center">
-        <p className="text-accent mb-4 text-lg animate-fade-in">안녕하세요, 저는</p>
+        {/* <p className="text-accent mb-4 text-lg animate-fade-in">안녕하세요, 저는</p> */}
 
         {/* Name */}
         <h1 className="text-fluid-5xl font-bold mb-4 tracking-wide animate-slide-up">
@@ -98,7 +98,7 @@ export default function IntroSection({ contactInfo }: IntroSectionProps) {
 
       {/* Scroll indicator */}
       <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer animate-bounce-slow"
+        className="absolute bottom-8 left-0 right-0 flex justify-center cursor-pointer animate-bounce-slow"
         onClick={scrollToNext}
         role="button"
         aria-label="아래로 스크롤"

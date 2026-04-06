@@ -1,13 +1,16 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 import { Menu } from "lucide-react";
+import TrackSwitch from "@/components/portfolio/track-switch";
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
+import type { PortfolioTrack } from "@/lib/portfolio/types";
 
 const navItems = [
   { id: "intro", label: "01. Intro" },
@@ -16,7 +19,11 @@ const navItems = [
   { id: "experience", label: "04. Experience" },
 ];
 
-export default function Navigation() {
+interface NavigationProps {
+  track: PortfolioTrack;
+}
+
+export default function Navigation({ track }: NavigationProps) {
   const [activeSection, setActiveSection] = useState("intro");
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -67,34 +74,42 @@ export default function Navigation() {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <div className="text-accent font-bold text-xl font-mono drop-shadow-glow">
+      <div className="container mx-auto px-6 py-4 flex items-center justify-between gap-4">
+        <Link
+          href={track === "web2" ? "/" : "/web3"}
+          className="text-accent font-bold text-xl font-mono drop-shadow-glow"
+          aria-label="포트폴리오 첫 화면으로 이동"
+        >
           {"<Chamdom />"}
-        </div>
+        </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              aria-label={`Navigate to ${item.label} section`}
-              aria-current={activeSection === item.id ? "true" : undefined}
-              className={`relative font-mono text-sm transition-all duration-300 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm px-2 py-1 ${
-                activeSection === item.id
-                  ? "text-accent"
-                  : "text-secondary-foreground"
-              }`}
-            >
-              {item.label}
-              {/* Active indicator underline */}
-              <span
-                className={`absolute bottom-0 left-0 h-0.5 bg-accent transition-all duration-300 ${
-                  activeSection === item.id ? "w-full" : "w-0"
+        <div className="hidden md:flex items-center gap-6">
+          <TrackSwitch currentTrack={track} />
+
+          <div className="flex space-x-8">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                aria-label={`Navigate to ${item.label} section`}
+                aria-current={activeSection === item.id ? "true" : undefined}
+                className={`relative font-mono text-sm transition-all duration-300 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm px-2 py-1 ${
+                  activeSection === item.id
+                    ? "text-accent"
+                    : "text-secondary-foreground"
                 }`}
-              />
-            </button>
-          ))}
+              >
+                {item.label}
+                {/* Active indicator underline */}
+                <span
+                  className={`absolute bottom-0 left-0 h-0.5 bg-accent transition-all duration-300 ${
+                    activeSection === item.id ? "w-full" : "w-0"
+                  }`}
+                />
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -109,6 +124,8 @@ export default function Navigation() {
           </SheetTrigger>
           <SheetContent side="right" className="w-[280px] bg-background/95 backdrop-blur-2xl border-l border-accent/20">
             <div className="flex flex-col gap-6 mt-12">
+              <TrackSwitch currentTrack={track} onNavigate={() => setIsOpen(false)} />
+
               {navItems.map((item) => (
                 <SheetClose asChild key={item.id}>
                   <button

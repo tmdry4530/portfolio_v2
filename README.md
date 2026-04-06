@@ -61,6 +61,10 @@ Portfolio_V2/
 4. **ExperienceSection**: 타임라인 형태의 경력 섹션
 5. **FooterSection**: 연락처 및 소셜 링크
 
+## 🧭 설계 문서
+
+- [Web2 / Web3 포트폴리오 분리 설계안](./docs/web2-web3-portfolio-split.md)
+
 ## 🛠️ 개발 가이드
 
 ### 새로운 섹션 추가

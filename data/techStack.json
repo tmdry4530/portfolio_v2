@@ -1,18 +1,6 @@
 {
   "frontend": [
     {
-      "name": "HTML 5",
-      "icon": "devicon-html5-plain colored",
-      "fallbackIcon": "🌐",
-      "description": "웹 마크업 언어"
-    },
-    {
-      "name": "CSS",
-      "icon": "devicon-css3-plain colored",
-      "fallbackIcon": "🎨",
-      "description": "스타일링 언어"
-    },
-    {
       "name": "JavaScript",
       "icon": "devicon-javascript-plain colored",
       "fallbackIcon": "📜",
@@ -96,10 +84,29 @@
       "description": "이더리움 라이브러리"
     },
     {
+      "name": "Ethers.js",
+      "icon": "/ethers.svg",
+      "useCustomIcon": true,
+      "customIcon": "/ethers.svg",
+      "width": 40,
+      "height": 40,
+      "fallbackIcon": "⚡",
+      "description": "이더리움 라이브러리"
+    },
+    {
       "name": "Hardhat",
       "icon": "devicon-hardhat-plain colored",
       "fallbackIcon": "🌐",
       "description": "개발 환경"
+    },
+    {
+      "name": "Foundry",
+      "icon": "/foundry.svg",
+      "customIcon": "/foundry.svg",
+      "useCustomIcon": true,
+      "width": 40,
+      "height": 40,
+      "description": "스마트 컨트랙트 개발 환경"
     }
   ],
   "tools": [
@@ -128,10 +135,10 @@
       "description": "배포 플랫폼"
     },
     {
-      "name": "Cursor",
-      "icon": "/cursor.svg",
+      "name": "Claude code",
+      "icon": "/claude.png",
       "useCustomIcon": true,
-      "customIcon": "/cursor.svg",
+      "customIcon": "/claude.png",
       "width": 40,
       "height": 40,
       "fallbackIcon": "💻",
