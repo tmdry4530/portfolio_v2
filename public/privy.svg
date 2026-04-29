@@ -1,0 +1,7 @@
+<svg role="img" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <title>Privy</title>
+  <rect width="64" height="64" rx="18" fill="#4F46E5"/>
+  <path d="M20 48V16h14.8C42.6 16 48 21 48 28.1c0 7.2-5.4 12.1-13.2 12.1H29V48h-9Zm9-15.1h5.2c3.1 0 5-1.8 5-4.8 0-2.9-1.9-4.7-5-4.7H29v9.5Z" fill="#FFFFFF"/>
+  <circle cx="45.5" cy="45.5" r="7.5" fill="#A5B4FC"/>
+  <path d="M45.5 41.6v7.8M41.6 45.5h7.8" stroke="#312E81" stroke-width="2.4" stroke-linecap="round"/>
+</svg>

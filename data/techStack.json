@@ -26,6 +26,38 @@
       "description": "React 프레임워크"
     },
     {
+      "name": "Tailwind CSS",
+      "icon": "devicon-tailwindcss-plain colored",
+      "fallbackIcon": "🌊",
+      "description": "유틸리티 퍼스트 CSS 프레임워크"
+    },
+    {
+      "name": "shadcn/ui",
+      "icon": "/shadcnui.svg",
+      "useCustomIcon": true,
+      "customIcon": "/shadcnui.svg",
+      "width": 40,
+      "height": 40,
+      "fallbackIcon": "◩",
+      "description": "Radix UI 기반 컴포넌트 시스템"
+    },
+    {
+      "name": "Chrome Extension",
+      "icon": "devicon-chrome-plain colored",
+      "fallbackIcon": "🧩",
+      "description": "브라우저 확장 프로그램 개발"
+    },
+    {
+      "name": "Plasmo",
+      "icon": "/plasmo.svg",
+      "useCustomIcon": true,
+      "customIcon": "/plasmo.svg",
+      "width": 40,
+      "height": 40,
+      "fallbackIcon": "🧩",
+      "description": "Chrome Extension 개발 프레임워크"
+    },
+    {
       "name": "Webpack",
       "icon": "devicon-webpack-plain colored",
       "fallbackIcon": "📦",
@@ -58,6 +90,30 @@
       "description": "웹 프레임워크"
     },
     {
+      "name": "Supabase",
+      "icon": "devicon-supabase-plain colored",
+      "fallbackIcon": "🟩",
+      "description": "인증·DB·스토리지 BaaS"
+    },
+    {
+      "name": "C",
+      "icon": "devicon-c-plain colored",
+      "fallbackIcon": "C",
+      "description": "시스템 프로그래밍 언어"
+    },
+    {
+      "name": "C++",
+      "icon": "devicon-cplusplus-plain colored",
+      "fallbackIcon": "C++",
+      "description": "시스템/알고리즘 프로그래밍 언어"
+    },
+    {
+      "name": "Python",
+      "icon": "devicon-python-plain colored",
+      "fallbackIcon": "🐍",
+      "description": "자동화·데이터 처리 언어"
+    },
+    {
       "name": "MySQL",
       "icon": "devicon-mysql-plain colored",
       "fallbackIcon": "🐬",
@@ -76,6 +132,36 @@
       "icon": "devicon-solidity-plain colored",
       "fallbackIcon": "🔗",
       "description": "스마트 컨트랙트"
+    },
+    {
+      "name": "Base",
+      "icon": "/base.svg",
+      "useCustomIcon": true,
+      "customIcon": "/base.svg",
+      "width": 40,
+      "height": 40,
+      "fallbackIcon": "🔵",
+      "description": "Ethereum L2 네트워크"
+    },
+    {
+      "name": "x402",
+      "icon": "/x402.svg",
+      "useCustomIcon": true,
+      "customIcon": "/x402.svg",
+      "width": 40,
+      "height": 40,
+      "fallbackIcon": "💸",
+      "description": "HTTP 기반 온체인 결제 프로토콜"
+    },
+    {
+      "name": "Privy",
+      "icon": "/privy.svg",
+      "useCustomIcon": true,
+      "customIcon": "/privy.svg",
+      "width": 40,
+      "height": 40,
+      "fallbackIcon": "🔐",
+      "description": "지갑 기반 인증 및 온보딩"
     },
     {
       "name": "Web3.js",
@@ -101,8 +187,8 @@
     },
     {
       "name": "Foundry",
-      "icon": "/foundry.svg",
-      "customIcon": "/foundry.svg",
+      "icon": "/Foundry.svg",
+      "customIcon": "/Foundry.svg",
       "useCustomIcon": true,
       "width": 40,
       "height": 40,
@@ -123,6 +209,52 @@
       "description": "코드 저장소"
     },
     {
+      "name": "GitHub Actions",
+      "icon": "devicon-githubactions-plain colored",
+      "fallbackIcon": "⚙️",
+      "description": "CI/CD 자동화"
+    },
+    {
+      "name": "Docker",
+      "icon": "/docker.svg",
+      "useCustomIcon": true,
+      "customIcon": "/docker.svg",
+      "width": 40,
+      "height": 40,
+      "fallbackIcon": "🐳",
+      "description": "컨테이너 기반 개발·배포 환경"
+    },
+    {
+      "name": "Vitest",
+      "icon": "/vitest.svg",
+      "useCustomIcon": true,
+      "customIcon": "/vitest.svg",
+      "width": 40,
+      "height": 40,
+      "fallbackIcon": "✓",
+      "description": "Vite 기반 테스트 프레임워크"
+    },
+    {
+      "name": "Turborepo",
+      "icon": "/turborepo.svg",
+      "useCustomIcon": true,
+      "customIcon": "/turborepo.svg",
+      "width": 40,
+      "height": 40,
+      "fallbackIcon": "⧉",
+      "description": "JavaScript·TypeScript 빌드 시스템"
+    },
+    {
+      "name": "Postman",
+      "icon": "/postman.svg",
+      "useCustomIcon": true,
+      "customIcon": "/postman.svg",
+      "width": 40,
+      "height": 40,
+      "fallbackIcon": "📮",
+      "description": "API 테스트 및 협업 도구"
+    },
+    {
       "name": "Notion",
       "icon": "devicon-notion-plain",
       "fallbackIcon": "💻",
@@ -133,16 +265,48 @@
       "icon": "devicon-vercel-plain",
       "fallbackIcon": "🚀",
       "description": "배포 플랫폼"
-    },
+    }
+  ],
+  "ai": [
     {
-      "name": "Claude code",
-      "icon": "/claude.png",
+      "name": "Claude Code",
+      "icon": "/claudecode-color.svg",
       "useCustomIcon": true,
-      "customIcon": "/claude.png",
+      "customIcon": "/claudecode-color.svg",
       "width": 40,
       "height": 40,
       "fallbackIcon": "💻",
-      "description": "코드 에디터"
+      "description": "AI 코딩 에이전트"
+    },
+    {
+      "name": "OpenAI Codex",
+      "icon": "/codex.svg",
+      "useCustomIcon": true,
+      "customIcon": "/codex.svg",
+      "width": 40,
+      "height": 40,
+      "fallbackIcon": "C",
+      "description": "OpenAI Codex 기반 코딩 에이전트"
+    },
+    {
+      "name": "OpenClaw",
+      "icon": "/openclaw.png",
+      "useCustomIcon": true,
+      "customIcon": "/openclaw.png",
+      "width": 40,
+      "height": 40,
+      "fallbackIcon": "🦞",
+      "description": "셀프호스팅 가능한 오픈소스 AI 에이전트"
+    },
+    {
+      "name": "Hermes Agent",
+      "icon": "/hermes-agent.png",
+      "useCustomIcon": true,
+      "customIcon": "/hermes-agent.png",
+      "width": 40,
+      "height": 40,
+      "fallbackIcon": "H",
+      "description": "Nous Research의 개인화 AI 에이전트"
     }
   ]
 }

@@ -7,7 +7,7 @@ import {
   socialLinks,
 } from "@/lib/data";
 import type { PortfolioContent } from "@/lib/portfolio/types";
-import { pickTechStack } from "@/lib/portfolio/utils";
+import { isWeb3HackathonExperience, pickTechStack } from "@/lib/portfolio/utils";
 
 const web3Description =
   "스마트 컨트랙트, 지갑 인증, 온체인 제품 개발 경험을 중심으로 정리한 Chamdom의 Web3 포트폴리오입니다.";
@@ -20,8 +20,8 @@ const web3ContactInfo: ContactInfo = {
 };
 
 const web3Experience: Experience[] = [
-  ...baseExperience.filter((item) => item.company === "블록체인 해커톤"),
-  ...baseExperience.filter((item) => item.company !== "블록체인 해커톤"),
+  ...baseExperience.filter(isWeb3HackathonExperience),
+  ...baseExperience.filter((item) => !isWeb3HackathonExperience(item)),
 ];
 
 export const web3Metadata: Metadata = {
@@ -45,7 +45,7 @@ export const web3Metadata: Metadata = {
 export const web3Portfolio: PortfolioContent = {
   track: "web3",
   contactInfo: web3ContactInfo,
-  techStack: pickTechStack(["blockchain", "frontend", "backend", "tools"]),
+  techStack: pickTechStack(["blockchain", "frontend", "backend", "tools", "ai"]),
   projects: baseProjects.filter(
     (project) => project.category === "Blockchain Project",
   ),

@@ -7,7 +7,7 @@ import {
   socialLinks,
 } from "@/lib/data";
 import type { PortfolioContent } from "@/lib/portfolio/types";
-import { pickTechStack } from "@/lib/portfolio/utils";
+import { isWeb3HackathonExperience, pickTechStack } from "@/lib/portfolio/utils";
 
 const web2Description =
   "프론트엔드와 풀스택 제품 개발 경험을 중심으로 정리한 Chamdom의 Web2 포트폴리오입니다.";
@@ -20,7 +20,7 @@ const web2ContactInfo: ContactInfo = {
 };
 
 const web2Experience: Experience[] = baseExperience.filter(
-  (item) => item.company !== "블록체인 해커톤",
+  (item) => !isWeb3HackathonExperience(item),
 );
 
 const web2ProjectTitle = "Job Application Tracker";
@@ -46,7 +46,7 @@ export const web2Metadata: Metadata = {
 export const web2Portfolio: PortfolioContent = {
   track: "web2",
   contactInfo: web2ContactInfo,
-  techStack: pickTechStack(["frontend", "backend", "tools"]),
+  techStack: pickTechStack(["frontend", "backend", "tools", "ai"]),
   projects: baseProjects.filter(
     (project) =>
       project.category === "Full Stack Project" &&

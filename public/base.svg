@@ -1,0 +1,5 @@
+<svg role="img" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <title>Base</title>
+  <circle cx="32" cy="32" r="30" fill="#0052FF"/>
+  <path d="M32.2 50C22.3 50 14 41.9 14 32s8.3-18 18.2-18c8.9 0 16.4 6.4 17.8 15H33v6h17C48.5 43.6 41.1 50 32.2 50Z" fill="#FFFFFF"/>
+</svg>

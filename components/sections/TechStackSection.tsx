@@ -78,10 +78,18 @@ const TechCategory = ({ title, techs }: { title: string; techs: TechStack[] }) =
   </div>
 );
 
+const categoryLabels: Record<string, string> = {
+  frontend: "Frontend",
+  backend: "Backend",
+  blockchain: "Blockchain",
+  tools: "Tools",
+  ai: "AI Tools",
+};
+
 export default function TechStackSection({ techStack }: TechStackSectionProps) {
   // 카테고리 이름 포맷팅 함수
   const formatCategoryName = (category: string) =>
-    category.charAt(0).toUpperCase() + category.slice(1);
+    categoryLabels[category] ?? category.charAt(0).toUpperCase() + category.slice(1);
 
   return (
     <section id="tech-stack" className="py-20 relative z-10">

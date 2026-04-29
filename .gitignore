@@ -27,3 +27,10 @@ yarn-error.log*
 next-env.d.ts
 
 dogfood-output/
+
+# AI tooling
+.claw/
+.claude/
+.omc/
+.omx/
+.tmp
