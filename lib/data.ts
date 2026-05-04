@@ -28,6 +28,7 @@ export interface Project {
   tech: string[];
   github: string;
   live?: string;
+  repositoryStatus?: string;
   year?: number;
   role?: string;
   featured?: boolean;

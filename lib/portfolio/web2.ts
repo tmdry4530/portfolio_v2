@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import type { ContactInfo, Experience } from "@/lib/data";
+import type { ContactInfo, Experience, Project } from "@/lib/data";
 import {
   contactInfo as baseContactInfo,
   experience as baseExperience,
@@ -9,49 +9,57 @@ import {
 import type { PortfolioContent } from "@/lib/portfolio/types";
 import { isWeb3HackathonExperience, pickTechStack } from "@/lib/portfolio/utils";
 
-const web2Description =
-  "프론트엔드와 풀스택 제품 개발 경험을 중심으로 정리한 Chamdom의 Web2 포트폴리오입니다.";
+const mainDescription =
+  "실시간 웹 앱, Web3 데이터 인프라, AI 에이전트 시스템을 TypeScript와 React/Next.js, Node.js/NestJS, PostgreSQL, WebSocket, 온체인 연동으로 구현하는 Chamdom의 풀스택 포트폴리오입니다.";
 
-const web2ContactInfo: ContactInfo = {
+const mainContactInfo: ContactInfo = {
   ...baseContactInfo,
-  title: "Frontend & Full Stack Developer",
+  title: "Full Stack Developer | Web3-capable",
   description:
-    "사용자에게 바로 가치를 주는 제품을 빠르게 설계하고 구현하는 프론트엔드 · 풀스택 개발자입니다. Next.js와 TypeScript를 중심으로 서비스 개발, UI 구현, 자동화 경험을 쌓아왔습니다.",
+    "TypeScript와 React/Next.js를 중심으로 제품 UI부터 백엔드 API, 데이터 파이프라인, 실시간 협업, Web3 온체인 연동까지 끝까지 연결해 만드는 풀스택 개발자입니다. 사용자에게 바로 쓰이는 서비스와 AI 에이전트·Web3 인프라를 함께 다룹니다.",
 };
 
-const web2Experience: Experience[] = baseExperience.filter(
-  (item) => !isWeb3HackathonExperience(item),
-);
+const mainExperience: Experience[] = [
+  ...baseExperience.filter((item) => !isWeb3HackathonExperience(item)),
+  ...baseExperience.filter(isWeb3HackathonExperience),
+];
 
-const web2ProjectTitle = "Job Application Tracker";
+const mainProjectTitles = [
+  "SyncSpace",
+  "x402-indexer",
+  "agent-poker",
+  "Job Application Tracker",
+  "Whale-move",
+];
+
+const pickProjectsByTitle = (titles: string[]): Project[] =>
+  titles
+    .map((title) => baseProjects.find((project) => project.title === title))
+    .filter((project): project is Project => Boolean(project));
 
 export const web2Metadata: Metadata = {
-  title: "Chamdom Portfolio | Frontend & Full Stack Developer",
-  description: web2Description,
+  title: "Chamdom Portfolio | Full Stack & Web3-capable Developer",
+  description: mainDescription,
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Chamdom Portfolio | Frontend & Full Stack Developer",
-    description: web2Description,
+    title: "Chamdom Portfolio | Full Stack & Web3-capable Developer",
+    description: mainDescription,
     url: "/",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chamdom Portfolio | Frontend & Full Stack Developer",
-    description: web2Description,
+    title: "Chamdom Portfolio | Full Stack & Web3-capable Developer",
+    description: mainDescription,
   },
 };
 
 export const web2Portfolio: PortfolioContent = {
   track: "web2",
-  contactInfo: web2ContactInfo,
-  techStack: pickTechStack(["frontend", "backend", "tools", "ai"]),
-  projects: baseProjects.filter(
-    (project) =>
-      project.category === "Full Stack Project" &&
-      project.title === web2ProjectTitle,
-  ),
-  experience: web2Experience,
+  contactInfo: mainContactInfo,
+  techStack: pickTechStack(["frontend", "backend", "blockchain", "tools", "ai"]),
+  projects: pickProjectsByTitle(mainProjectTitles),
+  experience: mainExperience,
   socialLinks,
 };

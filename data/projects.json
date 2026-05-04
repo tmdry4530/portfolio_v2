@@ -1,7 +1,41 @@
 [
   {
+    "title": "SyncSpace",
+    "description": "채팅의 의사결정과 문서 작업을 같은 화면에서 이어갈 수 있도록 설계한 실시간 협업 워크벤치입니다. Split Workbench UI, 채널 채팅, Notion/Obsidian-lite 스타일 협업 에디터, 사용자 presence와 워크스페이스 초대 흐름을 구현했습니다. Supabase Auth/DB/RLS로 인증과 권한을 관리하고, Node.js WebSocket 서버·Yjs·Tiptap·Zustand·TanStack Query를 조합해 로컬 UI 상태와 서버 상태, 실시간 편집 상태를 분리했습니다.",
+    "image": "/placeholder.svg",
+    "tech": ["TypeScript", "React", "Node.js", "WebSocket", "Supabase", "Yjs", "Tiptap", "TanStack Query", "Zustand"],
+    "github": "#",
+    "repositoryStatus": "Private",
+    "year": 2026,
+    "role": "Full Stack Developer",
+    "featured": true,
+    "category": "Full Stack Project"
+  },
+  {
+    "title": "x402-indexer",
+    "description": "Base mainnet의 USDC 전송과 온체인 이벤트를 수집해 x402 결제 후보를 탐지하고, 원시 블록 데이터를 payments·agents·services·interactions·daily stats로 정규화하는 Web3 데이터 인프라입니다. NestJS 기반 워커와 API, PostgreSQL 저장소, Redis/BullMQ 큐, viem 기반 체인 리더를 구성해 결제 프로토콜 분석에 필요한 인덱싱 파이프라인을 만들었습니다.",
+    "image": "/placeholder.svg",
+    "tech": ["NestJS", "TypeScript", "PostgreSQL", "Redis", "BullMQ", "viem", "Base", "USDC", "x402"],
+    "github": "https://github.com/tmdry4530/x402-indexer",
+    "year": 2026,
+    "role": "Backend / Web3 Infrastructure Developer",
+    "featured": true,
+    "category": "Web3 Infrastructure"
+  },
+  {
+    "title": "agent-poker",
+    "description": "AI 에이전트가 참여할 수 있는 포커 플랫폼 MVP입니다. 결정론적 Texas Hold'em 엔진, 이벤트 소싱 기반 리플레이, SHA-256 해시 체인 무결성 검증, 가상 칩 더블엔트리 원장, WebSocket 게임 서버, Bot SDK와 내장 전략, 안티 콜루전 로직, Next.js 관리자 UI를 포함합니다. PostgreSQL, Docker, CI/CD, Prometheus/Grafana 운영 지표까지 갖춘 테스트 친화적 시스템으로 구성했습니다.",
+    "image": "/placeholder.svg",
+    "tech": ["TypeScript", "Node.js", "Next.js", "PostgreSQL", "WebSocket", "Docker", "GitHub Actions", "Prometheus", "Grafana"],
+    "github": "https://github.com/tmdry4530/agent-poker",
+    "year": 2026,
+    "role": "Full Stack / AI Agent System Developer",
+    "featured": true,
+    "category": "AI Agent System"
+  },
+  {
     "title": "Job Application Tracker",
-    "description": "채용 플랫폼(원티드, 사람인, 잡코리아) 북마크/스크랩 공고를 자동 수집하고 통합 관리하는 서비스입니다. Chrome Extension이 각 플랫폼의 스크랩 페이지에서 공고 정보와 JD를 자동 파싱하고, Claude AI를 활용하여 JD 핵심 요약 및 맞춤형 면접 예상질문과 모범답변을 생성합니다. Supabase를 활용한 인증 및 데이터 관리, Next.js App Router 기반의 대시보드로 마감일 추적과 지원 현황을 한눈에 관리할 수 있습니다.",
+    "description": "Wanted, Saramin, JobKorea의 북마크·스크랩 공고를 자동 파싱해 한 곳에서 관리하는 취업 지원 관리 제품입니다. Plasmo 기반 Chrome Extension이 공고 정보와 JD를 수집하고, Claude AI로 JD 핵심 요약과 맞춤형 면접 예상 질문·답변을 생성합니다. Next.js 대시보드, Supabase Auth/DB, 지원 상태·마감일 관리 흐름을 연결해 반복적인 지원 준비 작업을 줄였습니다.",
     "image": "/job-tracker.png",
     "tech": ["Next.js 14", "TypeScript", "Plasmo", "Chrome Extension", "Supabase", "Claude AI", "Tailwind CSS", "shadcn/ui"],
     "github": "https://github.com/tmdry4530/Job-tracker",
@@ -12,36 +46,36 @@
     "category": "Full Stack Project"
   },
   {
+    "title": "Whale-move",
+    "description": "2017년부터 2026년까지의 Ethereum 주요 이벤트와 고래 지갑·거래소 흐름·가격 데이터를 분석하는 온체인 이벤트 애널리틱스 시스템입니다. Python/SQLAlchemy 파이프라인으로 ETH events 21건, whale transfers 1,286건, CEX flows 15,393건, prices 6,330건, event windows 315건을 PostgreSQL에 적재하고, Fastify TypeScript API와 React/Vite/TanStack Query/Recharts 대시보드로 이벤트 전후 흐름을 시각화했습니다.",
+    "image": "/placeholder.svg",
+    "tech": ["Python", "SQLAlchemy", "PostgreSQL", "Fastify", "TypeScript", "React", "Vite", "TanStack Query", "Recharts", "Docker"],
+    "github": "https://github.com/tmdry4530/Whale-move",
+    "year": 2026,
+    "role": "Data / Full Stack Developer",
+    "featured": true,
+    "category": "Data Analytics"
+  },
+  {
+    "title": "AgentAlpha",
+    "description": "Base Sepolia에서 AI 에이전트가 온체인 시그널을 등록·소비하는 마켓플레이스 MVP입니다. Coinbase AgentKit, x402 결제 흐름, FLock 기반 AI 평가, Next.js UI, viem 기반 온체인 연동을 실험해 에이전트 경제와 결제 UX를 빠르게 검증한 프로토타입입니다.",
+    "image": "/placeholder.svg",
+    "tech": ["Next.js", "TypeScript", "Coinbase AgentKit", "x402", "FLock", "viem", "Base Sepolia"],
+    "github": "#",
+    "repositoryStatus": "Private",
+    "year": 2026,
+    "role": "Web3 / AI Prototype Developer",
+    "featured": true,
+    "category": "Web3 AI Prototype"
+  },
+  {
     "title": "Proof of Prompt",
-    "description": "Proof of Prompt(PoP)는 탈중앙화 프롬프트 공유 및 LLM 블라인드 평가 플랫폼입니다. x402 프로토콜을 사용하여 프롬프트당 마이크로페이먼트를 구현하고, Base 블록체인과 스마트 컨트랙트를 활용한 PaymentTreasury가 결제 및 보상 분배를 담당합니다. 그리고 Privy를 이용하여 지갑 기반 인증을 처리하고, Flock API를 통해 다양한 LLM 모델의 블라인드 평가를 제공합니다.",
+    "description": "프롬프트 공유와 LLM 블라인드 평가를 온체인 결제와 연결한 Web3 AI 실험 프로젝트입니다. x402 프로토콜로 프롬프트 단위 마이크로페이먼트를 구현하고, Base 네트워크와 PaymentTreasury 스마트 컨트랙트로 결제·보상 분배 흐름을 구성했습니다. Privy 지갑 인증과 FLock API를 활용해 사용자 온보딩과 다양한 LLM 모델 평가 경험을 제공합니다.",
     "image": "/PoP.png",
-    "tech": ["Next.js", "Solidity", "Foundry", "Ethers.js", "Privy", "Flock API"],
+    "tech": ["Next.js", "Solidity", "Foundry", "Ethers.js", "Privy", "Flock API", "Base", "x402"],
     "github": "https://github.com/Base-PoP/Proof-of-Prompt",
     "live": "https://base-pop.vercel.app/",
     "year": 2025,
-    "role": "Full Stack Developer",
-    "featured": true,
-    "category": "Blockchain Project"
-  },
-  {
-    "title": "URUK",
-    "description": "URUK은 밈코인을 활용한 로또추첨게임입니다. 사용자들은 Kuru에 런칭된 $URUK을 구매하여 로또에 참여할 수 있습니다. 또한 추첨 결과는 블록체인에 기록되어 누구나 확인할 수 있습니다.",
-    "image": "/urukkuru.gif",
-    "tech": ["Next.js", "Solidity", "Hardhat", "Ethers.js"],
-    "github": "https://github.com/tmdry4530/urukkuru",
-    "live": "https://urukkuru.vercel.app/",
-    "year": 2025,
-    "role": "Frontend Developer",
-    "featured": true,
-    "category": "Blockchain Project"
-  },
-  {
-    "title": "Nae-gift",
-    "description": "Naegift는 탈중앙화 기프티콘 마켓플레이스입니다. MetaMask를 사용하여 트랜잭션을 발생시키고, 이더리움 블록체인과 스마트 컨트랙트를 활용한 에스크로 서비스가 거래 중개 역할을 담당합니다. 그리고 Push protocol을 이용하여 탈중앙 알림프로토콜을 사용하였고, DID / VC를 활용하여 사용자의 신원을 관리하였습니다.",
-    "image": "/Naegift.gif",
-    "tech": ["React", "Solidity", "Hardhat", "Ethers.js", "DID/VC"],
-    "github": "https://github.com/naegift/did_project",
-    "year": 2024,
     "role": "Full Stack Developer",
     "featured": true,
     "category": "Blockchain Project"

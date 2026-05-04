@@ -86,16 +86,27 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
 
                 {/* Links */}
                 <div className="flex gap-4 pt-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 text-secondary-foreground hover:text-accent border border-white/10 rounded-lg hover:border-accent/50 hover:bg-accent/5 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-                    aria-label={`${project.title} GitHub 저장소 보기`}
-                  >
-                    <Github size={18} />
-                    <span className="text-sm font-mono">Code</span>
-                  </a>
+                  {project.github && project.github !== "#" ? (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 text-secondary-foreground hover:text-accent border border-white/10 rounded-lg hover:border-accent/50 hover:bg-accent/5 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                      aria-label={`${project.title} GitHub 저장소 보기`}
+                    >
+                      <Github size={18} />
+                      <span className="text-sm font-mono">Code</span>
+                    </a>
+                  ) : (
+                    <div className="flex items-center gap-2 px-4 py-2 text-muted-foreground border border-white/10 rounded-lg bg-secondary/30 cursor-not-allowed">
+                      <Github size={18} />
+                      <span className="text-sm font-mono">
+                        {project.repositoryStatus === "Private"
+                          ? "Private Repo"
+                          : "Code unavailable"}
+                      </span>
+                    </div>
+                  )}
                   {project.live && project.live !== "#" && (
                     <a
                       href={project.live}
